@@ -1,14 +1,14 @@
-const { merge } = require("webpack-merge");
-const baseConfig = require("./webpack.config.base")
+const { merge } = require('webpack-merge');
+const path = require('path');
+const baseConfig = require('./webpack.config.base');
 const devConfig = {
-	mode: 'development',
-	output: {
-		filename: '[name].js',
-		library: {
-			name: "[name]",
-			type: 'umd',
-		}
-	}
-}
+  mode: 'development',
+  output: {
+    library: {
+      name: '[name]',
+      type: 'var',
+    },
+  },
+};
 
-module.exports = merge(baseConfig,devConfig);
+module.exports = merge(baseConfig, devConfig);
